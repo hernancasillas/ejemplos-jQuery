@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="jquery-3.4.1.js"></script> -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Apple</li>
+        <li class="like">Google</li>
+        <li class="like">Amazon</li>
+        <li>Tesla</li>
+    </ul>
+    <script>
+        var styles = {
+	        fontSize: 25,
+	        color: "red"
+        };
+        $('.like').css(styles);
+    </script>
+    <div>Div 1</div>
+    <div class = "highlight">Div 2</div>
+    <div id = "third">Div 3</div>
+    <div class = "highlight">Div 4</div>
+    <script>
+           
+        /* var style1 = {
+            backgroundColor: "purple"
+        }; */
+        $('div').css("backgroundColor", "purple");
+        $('.highlight').css("width", "200");
+        $('#third').css("border", "solid orange 5px");
+        $('div:first-of-type').css("color", "pink");
+        /* var style2 = {
+            width: "200px"
+        };
+        $('.highlight').css(style2);
+        $('div').css(style1);
+        var style3 = {
+            border-style: "solid",
+            border-color: "red"
+        };
+        $('#third').css(style3); */
+    </script>
+</body>
+</html>
