@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <style>
+
+        .correct{
+            color: green;
+        }
+
+        .wrong{
+            color: red;
+            background-color: pink;
+        }
+
+        .done{
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body> 
+    <h1>Common jQuery Methods</h1>
+    <ul id="common-methods">
+        <li>val()</li>
+        <li>text()</li>
+        <li>attr()</li>
+        <li>html()</li>
+        <li>addClass()</li>
+        <li>removeClass()</li>
+        <li>toggleClass()</li>
+    </ul>
+    <input type="text" name="text" id="text" placeholder="Write something">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAaVBMVEX///9kQaRiP6N9X7Pz8fh/Y7Tw7fb6+fz39fqIbbmUfMCfiseQd76lkcq8rdjIu99uTappR6fs5/TSx+TBs9vWzed5W7Ha0ulqSKfQxuRfO6Gpls3e1+xwUKuvntCCZbWZg8O1pdTl3/C/KABHAAADRUlEQVR4nO3d6XLiMBAEYM5AAgZDgIScLO//kJtKVYqsdViSJU+Pt/svspivhKjycGg0amZ5Pxkri2H4zrEeCKRS57BD9qeBQA7SVSXE5liu9S2IFfKkb6vbIa8KHTbI3XQgkO1OuqiUmI7Fg8YFsUDe3qVrSooJ+ZAuKS3mVv9U+coyITq3uglZXHQuiAG5Orb6BCvtkD92x+40hcpzG2RmvzWcTK8zpOzNMhuQs0n9hszvzPdpwVhuxf8dsFjZt7o6yPVkdeiDbOwOdRBnF0gb5Pg8EIizC6QM4u4CKYO4u0C6IJ4ukC6IpwukC+LpAqmC7OcDgWw8t4aqIPduhy6Ix0FIqRBCSKEQQkihEEJIoRBCSKEQQkih9AdZmIkcDwI5r5s5eMcfjPFHDMim+enlS+UdX700L9iCQIwZWiBGYYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYT8X5ChfIPu6bWR6uwdf66aF7xhQAqHEEIKhRBCCoUQNMjV/E/M24OKIPu1WeLtUT0Qm0MjxOpQCLE79EEcDnUQl0MbxOlQBnE7JrdBCiBux/j9Ngof4lmP6a87aXiIx3H6/atFdEioAx0S7ACHhDuwIREOaEiMAxkS5QCGxDlwIZEOWEisAxUS7QCFxDswIQkOSEiKAxGS5ACEpDnwIIkOOEiqAw2S7PBD6ssqLFfH7LOPwAl+4jzIsM3hhQQfPzJ+dDhW0SeYpDr8kNDs7M/y5ciUdkdJSK+OgpB+HeUgPTuKQfp2lIL07igE6d9RBiLgKAKRcJSAiDgKQGQc+SFCjuwQKUduiJgjM0TOkRci6MgKkXTkhIg6MkJkHfkgwo5sEGlHLshS2pEJsq2yzDNOd2SCzLNMM+7gyAPJlnQHFqSDAwrSxYEE6eQYZWoyewsMTCfH6CEuvjPuXKnXQVNfOjlsxyH4co4/kL4+BM7dyRGbx2hI7T9eQSrREFBHNATVEQuBdURCcB1xEGBHFATZEQOBdkRAsB3hEHBHMATdEQqBdwRC8B1hEAWOIIgGRwhEhSMAosPRDlHiaIVocbRB1DhaIHocfogihw8y0eTwQXYboZr+AvoaieQ44VDFAAAAAElFTkSuQmCC" alt="imagen">
+
+    <h2>Task List</h2>
+    <ul id="tasks">
+        <li>Go for a run</li>
+        <li>Homework</li>
+        <li>Go shopping</li>
+    </ul>
+    <script>
+    $('h1').text('You have been hacked!');
+    var current = $('#common-methods').html();
+    $('#common-methods').html(current + "<li> New element </li>");
+
+    //Get the current value from the input
+    current = $('input').val();
+    console.log(current);
+
+    //Set the input value
+    $('input').val("Bye bye!");
+
+
+    //Get the current width
+    current = $('img').attr('width');
+    console.log(current);
+    
+    //Change the image's width
+    $('img').attr('width', '50');
+
+    $('#tasks').addClass('correct');
+
+    $('#tasks').toggleClass('wrong')
+    $('#tasks').toggleClass('wrong')
+
+    $('#tasks li:first').addClass('done');
+    </script>
+</body>
+</html>
