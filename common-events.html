@@ -76,6 +76,16 @@
         {
             console.log($(this).text());
         })
+
+        $('button').on('mouseenter', function()
+        {
+            $(this).css('backgrund-color', 'pink');
+        })
+
+        $('button').on('mouseout', function()
+        {
+            $(this).css('backgrund-color', 'white');
+        })
     </script>
     
 </body>

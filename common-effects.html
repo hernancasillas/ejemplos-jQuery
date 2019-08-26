@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <style>
+        div {
+            background-color: yellow;
+            width: 200px;
+            padding: 40px;
+            margin: 20px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body> 
+    <h1>Common jQuery Effects</h1>
+
+    <h2>fadeOut example</h2>
+    <div class="fade">Don't fade me</div>
+    <div class="fade">Plase don't fade me out!</div>
+    <div class="fade">Help! Help!</div>
+
+    <button id="fade-button">Click me to fade!</button>
+
+    <h2>slideOut example</h2>
+    <div class="slide">Don't slide me</div>
+    <div class="slide">Plase don't slide me out!</div>
+    <div class="slide">Help! Help!</div>
+    <button id="slide-button">Click me to slide!</button>
+    
+    <script>
+    
+            $('#slide-button').on('click', function()
+            {
+                $('.slide').slideToggle('slow');
+            })
+
+        $('#fade-button').on('click', function()
+        {
+            $('.fade').fadeToggle('slow', function()
+            {
+                $(this).remove();
+                console.log('fadeOut completed!');
+            });
+        })
+    
+    </script>
+    
+</body>
+</html>
