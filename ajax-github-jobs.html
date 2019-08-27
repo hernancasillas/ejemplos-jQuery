@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <style>
+        .location, .description{
+            display: none;
+        }
+    </style>
+    <title>GitHub Jobs API</title>
+</head>
+<body>
+    <h1>GitHub Jobs API</h1>
+    <div class="job-list">
+        
+
+    </div>
+    <script>
+        $('.job-list').on('click', 'h2', function(){
+            $(this).nextUntil('h2').slideToggle();
+            //$('.job-list .location').slideToggle();
+            //$('.job-list .description').slideToggle();
+        })
+
+        $.ajax({
+            url: "https://jobs.github.com/positions.json?description=python&full_time=true&location=sf",
+            success: function(data)
+            {
+                console.log(data);
+                var job, i;
+                for (i = 0; i < data.length; i++)
+                {
+                    job = data[i];
+                    $('.job-list').append('<h2>'+ job.title + '</h2>');
+                    $('.job-list').append('<h3 class="location">'+ job.location + '</h3>');
+                    
+                    $('.job-list').append('<div class="description">' + job.description + '</div>');
+
+
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>
